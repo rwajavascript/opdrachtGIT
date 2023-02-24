@@ -1,0 +1,53 @@
+<html>
+    <script>
+        "use strict"
+        //aantal getallen vragen
+        let getallenarray = []
+        let aantal = prompt("Hoeveel getallen wilt u ingeven?")
+        let aantalcheck = () => {
+            if (aantal == null) {
+            document.write(`<p>U hebt geannuleerd.</p>`)
+            return false
+            }
+            else if (aantal.length == 0) {
+            document.write(`<p>U hebt niets ingevuld.</p>`)
+            return false
+            }    
+            else if (isNaN(aantal)) {
+            document.write(`<p>Dit is geen correcte ingave.</p>`)
+            return false
+            }
+            else  {
+            return aantal
+            }
+        }
+        let aantalcontrole = aantalcheck (aantal);
+      
+        //getallen vragen
+        if (aantalcontrole == aantal) {
+            for (let i = 1; i <= aantal; i++) {
+                let getal = prompt(`Geef getal ${i} in`);
+                let getalcheck = () => {
+                    if (getal == null) {
+                    return "fout"
+                    }
+                    else if (getal.length == 0) {
+                    return "fout"
+                    }    
+                    else if (isNaN(getal)) {
+                    return "fout"
+                    }
+                    else  {
+                    return getal
+                    }
+                }
+            let getalcontrole = getalcheck(getal);
+            getallenarray[i-1] = getalcontrole;
+           
+            }
+        }
+        //getallen schrijven
+        document.write(`<p>${getallenarray}</p>`)  
+    </script>
+</html>
+

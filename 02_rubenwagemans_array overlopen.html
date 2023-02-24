@@ -1,0 +1,15 @@
+<html>
+    <script>
+        let aantalvraag = prompt("Hoeveel automerken wil je ingeven?");
+        let aantalmerken = new Array(aantalvraag)
+        let merken = []
+        for (i = 1; i <= aantalmerken; i++) 
+            {
+            merken.push(prompt(`Geef merk nummer ${i} in.`))
+            };
+        document.write(`<p>U hebt volgende merken ingegeven:</p>`)
+        for (i = 0; i < aantalmerken; i++) {
+            document.write(`<p>${i+1}: ${merken[i]}</p>`)
+        }
+    </script>
+</html>
